@@ -1,0 +1,53 @@
+form {
+    width: 100%;
+
+    input {
+        width: 100%;
+        
+        padding: 1rem;
+        border: 2px solid rgba($color: $Black, $alpha: 0.1);
+        border-radius: 5px;
+        
+        font-weight: $ff-w-semi-bold;
+    
+        @include devices("desktop"){
+            padding: 1rem 1.5rem;
+        }
+    
+        &:focus {
+            outline: none;
+            border-color: $Dark_Blue;
+        }
+
+        &.input-error {
+            border-color: $Red;
+            
+            &:focus {
+                outline: none;
+                display: flex;
+            }
+
+            &::before {
+                display: block;
+                content: '';
+                width: 25px;
+                height: 25px;
+                background-color: red;
+            }
+        }
+    }
+    
+    input[type="submit"]{
+        background-color: $Green;
+        color: $White;
+        cursor: pointer;
+
+        &:focus {
+            outline: none;
+        }
+
+        &:hover {
+            background-color: rgba($color: $Green, $alpha: 0.7);
+        }
+    }
+}
